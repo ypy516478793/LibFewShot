@@ -17,6 +17,8 @@ episode_size: 1
 train_episode: 10
 test_episode: 10
 
+parallel_part:
+- emb_func
 
 backbone:
   name: Conv64F

@@ -36,8 +36,10 @@ class Config(object):
             is_resume: Specifies whether to resume, the default is False.
         """
         self.is_resume = is_resume
-        self.config_file = config_file
         self.console_dict = self._load_console_dict()
+        if config_file is None:
+            config_file = self.console_dict["config_file"]
+        self.config_file = config_file
         self.default_dict = self._load_config_files(DEFAULT_FILE)
         self.file_dict = self._load_config_files(config_file)
         self.variable_dict = self._load_variable_dict(variable_dict)
@@ -112,6 +114,7 @@ class Config(object):
             dict: A dict of LibFewShot console setting.
         """
         parser = argparse.ArgumentParser()
+        parser.add_argument("-c", "--config_file", type=str, help="config file")
         parser.add_argument("-w", "--way_num", type=int, help="way num")
         parser.add_argument("-s", "--shot_num", type=int, help="shot num")
         parser.add_argument("-q", "--query_num", type=int, help="query num")

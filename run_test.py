@@ -7,14 +7,16 @@ from core import Test
 
 sys.dont_write_bytecode = True
 
-PATH = "./results/RelationNet-miniImageNet--ravi-resnet18-5-1-Aug-22-2021_21-22-02"
+PATH = "/home/cougarnet.uh.edu/pyuan2/Projects/LibFewShot/results/RFSModel-miniImageNet--ravi-resnet18-5-1-Oct-08-2021-19-47-39"
 VAR_DICT = {
     "test_epoch"  : 5,
-    "device_ids"  : "2",
+    "device_ids"  : "7",
     "n_gpu"       : 1,
     "test_episode": 600,
     "episode_size": 1,
-    "test_way"    : 6,
+    "test_way"    : 5,
+    "emb_func_path": "./results/RFSModel-miniImageNet--ravi-resnet18-5-1-Oct-08-2021-19-47-39/checkpoints/emb_func_best.pth",
+    "classifier_path": "./results/RFSModel-miniImageNet--ravi-resnet18-5-1-Oct-08-2021-19-47-39/checkpoints/classifier_best.pth",
 }
 
 if __name__ == "__main__":
